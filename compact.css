@@ -16,7 +16,8 @@ hgroup {
 hgroup a {
   grid: repeat(2, 3vmin) / repeat(8, 4vmin);
 }
-h3, h4,
+h3,
+h4,
 picture {
   margin: 1rem 0 0.5rem 0;
 }

@@ -54,7 +54,7 @@
   font-display: swap;
   src: local("Lora Bold"), local("Lora-Bold"),
     url(/static/lora-var.woff2) format("woff2-variations"),
-    url(/static/lora-700.woff2) format("woff2");
+    url(/static/lora-700.woff2) format("woff2"),
     url(https://seankhliao.com/static/lora-var.woff2) format("woff2-variations"),
     url(https://seankhliao.com/static/lora-700.woff2) format("woff2");
 }
