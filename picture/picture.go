@@ -66,12 +66,16 @@ func (r *Renderer) renderImage(w util.BufWriter, source []byte, node ast.Node, e
 	}
 	n := node.(*ast.Image)
 	dst := string(n.Destination)
+	ext := path.Ext(dst)
 	if strings.HasPrefix(dst, "/") {
-		ext := path.Ext(dst)
-		for _, e := range []string{".png", ".webp"} {
-			w.WriteString(fmt.Sprintf("<source srcset=%q>\n", strings.TrimSuffix(dst, ext)+e))
+		for _, e := range []string{"png", "webp"} {
+			fmt.Fprintf(w, `<source type="image/%[1]s" srcset="%[2]s.%[1]s">`+"\n", e, strings.TrimSuffix(dst, ext))
 		}
 	}
-	w.WriteString(fmt.Sprintf("<img src=%q alt=%q>\n", n.Destination, util.EscapeHTML(n.Text(source))))
+	var extraAttrs string
+	if strings.TrimSuffix(path.Base(dst), ext) == "map" {
+		extraAttrs = `width="1639" height="1080"`
+	}
+	fmt.Fprintf(w, `<img src=%q alt=%q %s loading="lazy" fetchpriority="low">`+"\n", n.Destination, util.EscapeHTML(n.Text(source)), extraAttrs)
 	return ast.WalkSkipChildren, nil
 }
