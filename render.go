@@ -49,12 +49,13 @@ type Data struct {
 	Main string
 
 	// Optional
-	Style string
-	Title string // defaults to h1
-	Desc  string // defaults to h2
-	Head  string
-	GTM   string
-	URL   string
+	Style    string
+	Title    string // defaults to h1
+	Subtitle string // defaults to h2
+	Desc     string // defaults to subtitle
+	Head     string
+	GTM      string
+	URL      string
 }
 
 type Renderer struct {
@@ -79,8 +80,11 @@ func (r Renderer) Render(w io.Writer, src io.Reader, d Data) error {
 		if hd, ok := n.(*ast.Heading); ok {
 			if hd.Level == 1 && d.Title == "" {
 				d.Title = string(hd.Text(b))
-			} else if hd.Level == 2 && d.Desc == "" {
-				d.Desc = string(hd.Text(b))
+			} else if hd.Level == 2 {
+				d.Subtitle = string(hd.Text(b))
+				if d.Desc == "" {
+					d.Desc = d.Subtitle
+				}
 			}
 		}
 	}

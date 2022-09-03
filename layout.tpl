@@ -35,7 +35,7 @@
   {{ with .GTM }}<noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ . }}" height="0" width="0" style="display: none; visibility: hidden"></iframe></noscript>{{ end }}
 
   <h1>{{ .Title }}</h1>
-  {{ with .Desc }}<h2>{{ . }}</h2>{{ end }}
+  {{ with .Subtitle }}<h2>{{ . }}</h2>{{ end }}
 
   <hgroup>
     <a href="https://seankhliao.com/">
