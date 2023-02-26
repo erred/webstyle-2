@@ -45,6 +45,7 @@ var (
 	)
 )
 
+// Data does something
 type Data struct {
 	Main string
 
