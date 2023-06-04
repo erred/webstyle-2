@@ -1,0 +1,5 @@
+agents:
+  queue: default
+
+steps:
+  - command: "go build ./..."
