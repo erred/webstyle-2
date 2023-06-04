@@ -1,16 +1,8 @@
-agents:
-  queue: default
-
 steps:
-  - command: "go build ./..."
-    plugins:
-      - docker#v5.7.0:
-          image: "golang:1.20"
-  - command: "go test ./..."
-    plugins:
-      - docker#v5.7.0:
-          image: "golang:1.20"
-  - command: "go vet ./..."
-    plugins:
-      - docker#v5.7.0:
-          image: "golang:1.20"
+  - label: "build and test"
+    commands:
+      - "GOOS=linux GOARCH={{matrix}} go build ./..."
+      - "GOOS=linux GOARCH={{matrix}} go test -vet=all ./..."
+    matrix:
+      - "arm64"
+      - "amd64"
