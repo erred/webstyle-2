@@ -3,3 +3,14 @@ agents:
 
 steps:
   - command: "go build ./..."
+    plugins:
+      - docker#v5.7.0:
+          image: "golang:1.20"
+  - command: "go test ./..."
+    plugins:
+      - docker#v5.7.0:
+          image: "golang:1.20"
+  - command: "go vet ./..."
+    plugins:
+      - docker#v5.7.0:
+          image: "golang:1.20"
