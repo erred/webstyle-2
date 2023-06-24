@@ -1,16 +1,8 @@
 steps:
-  - label: "{{matrix}} build"
+  - label: "build and test"
     commands:
-      - "GOOS=linux GOARCH={{matrix}} go build ./... && go vet ./..."
-    plugins:
-      - docker#v5.7.0:
-          image: "golang:alpine"
-    matrix:
-      - "arm64"
-      - "amd64"
-  - label: "test"
-    commands:
-      - "go test ./..."
+      - "go build ./..."
+      - "go test -vet=all ./..."
     plugins:
       - docker#v5.7.0:
           image: "golang:alpine"
