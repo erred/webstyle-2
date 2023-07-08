@@ -68,7 +68,7 @@ func (r *Renderer) renderImage(w util.BufWriter, source []byte, node ast.Node, e
 	dst := string(n.Destination)
 	ext := path.Ext(dst)
 	if strings.HasPrefix(dst, "/") {
-		for _, e := range []string{"png", "webp", "avif"} {
+		for _, e := range []string{"png", "avif"} {
 			fmt.Fprintf(w, `<source type="image/%[1]s" srcset="%[2]s.%[1]s">`+"\n", e, strings.TrimSuffix(dst, ext))
 		}
 	}
