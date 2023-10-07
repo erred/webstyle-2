@@ -11,7 +11,9 @@
 
   background: var(--background);
   color: var(--text);
-  font: 18px "Inconsolata", monospace;
+  font:
+    18px "Inconsolata",
+    monospace;
 }
 
 @font-face {
@@ -19,7 +21,9 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: local("Inconsolata"), local("Inconsolata-Regular"),
+  src:
+    local("Inconsolata"),
+    local("Inconsolata-Regular"),
     url(/static/inconsolata-var.woff2) format("woff2-variations"),
     url(/static/inconsolata-400.woff2) format("woff2"),
     url(https://seankhliao.com/static/inconsolata-var.woff2)
@@ -31,7 +35,9 @@
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: local("Inconsolata Bold"), local("Inconsolata-Bold"),
+  src:
+    local("Inconsolata Bold"),
+    local("Inconsolata-Bold"),
     url(/static/inconsolata-var.woff2) format("woff2-variations"),
     url(/static/inconsolata-700.woff2) format("woff2"),
     url(https://seankhliao.com/static/inconsolata-var.woff2)
@@ -43,7 +49,9 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: local("Lora"), local("Lora-Regular"),
+  src:
+    local("Lora"),
+    local("Lora-Regular"),
     url(/static/lora-var.woff2) format("woff2-variations"),
     url(/static/lora-400.woff2) format("woff2"),
     url(https://seankhliao.com/static/lora-var.woff2) format("woff2-variations"),
@@ -54,7 +62,9 @@
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: local("Lora Bold"), local("Lora-Bold"),
+  src:
+    local("Lora Bold"),
+    local("Lora-Bold"),
     url(/static/lora-var.woff2) format("woff2-variations"),
     url(/static/lora-700.woff2) format("woff2"),
     url(https://seankhliao.com/static/lora-var.woff2) format("woff2-variations"),
@@ -72,7 +82,9 @@ body {
   /* ==override newtab page == */
   background: var(--background);
   color: var(--text);
-  font: 18px "Inconsolata", monospace;
+  font:
+    18px "Inconsolata",
+    monospace;
 }
 
 body > * {
@@ -95,7 +107,9 @@ h2 {
 }
 
 hgroup {
-  font: 700 5vmin "Lora", serif;
+  font:
+    700 5vmin "Lora",
+    serif;
   grid-area: 1 / 1 / span 2 / span 2;
   margin: 0;
   place-self: end start;
@@ -206,7 +220,9 @@ blockquote {
 
 code {
   background: var(--background-light);
-  font: 1em "Inconsolata", monospace;
+  font:
+    1em "Inconsolata",
+    monospace;
   padding: 0.1rem;
 }
 pre {
